@@ -1,0 +1,110 @@
+body {
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-image: url("/ressources/background.jpeg");
+  min-height: 100%;
+  min-width: 100%;
+  height: 100%;
+  width: 100%;
+}
+
+header {
+  background-color: white;
+}
+
+td {
+  width: 50px;
+  height: 50px;
+}
+
+td>img {
+  width: 50px;
+  height: 50px;
+}
+
+.case {
+  min-width: 50px;
+  min-height: 50px;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border: 2px solid black;
+}
+
+.caseFree {
+  border-color: 2px solid black;
+  background-color: white;
+}
+
+.caseBlock {
+  background-color: gray;
+}
+
+/* .caseWeapon {
+  background-color: white;
+} */
+
+
+.modal {
+  position: absolute;
+  top: 10px;
+  right: 100px;
+  bottom: 0;
+  left: 0;
+  z-index: 10000;
+  overflow: auto;
+  overflow-y: auto;
+}
+
+.movePossible {
+  background-color: yellow;
+}
+
+.movePossible:hover {
+  cursor: pointer;
+  background-color: rgb(177, 177, 115);
+}
+
+.player {
+  background-color: white;
+}
+
+#imageWeaponPlayer1, #imageWeaponPlayer2 {
+  max-width: 100%;
+  max-height: 150px;
+}
+
+#map {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#buttons-player1, #buttons-player2 {
+  margin-top: 40px;
+}
+
+/* Footer */
+
+#pieddepage {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.socialmedia {
+  display: block;
+}
+
+i {
+  color: #fff;
+  margin-left: 10px;
+}
+
+a {
+  color: rgb(118, 149, 235);
+}
+
+a:hover,
+i:hover {
+  color: white;
+  text-decoration: none !important;
+}

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="description" content="Jeu tour par tour" />
+    <!-- SEO -->
+    <meta property="og:site_name" content="Jeu tour par tour" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://projet6.oc.madeinfck.com" />
+    <meta property="og:title" content="Jeu tour par tour" />
+    <meta property="og:description" content="Jeu tour par tour" />
+    <meta property="og:image" content="" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@madeinfck" />
+    <meta name="twitter:title" content="Jeu tour par tour" />
+    <meta name="twitter:description" content="Jeu tour par tour" />
+    <meta name="twitter:image" content="./ressources/logo.png" />
+    <meta name="twitter:url" content="http://projet6.oc.madeinfck.com" />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Jeu tour par tour</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header class="container-fluid text-center text-black">
+      <h1>Jeu tour par tour</h1>
+      <h3>Projet 6 OC</h3>
+    </header>
+    <div class="container-fluid">
+      <div>
+        <!-- Interface -->
+        <!-- Beginning modal -->
+        <div class="modal fade" id="modal" tabindex="100" role="dialog" aria-labelledby="modalLabel" aria-hidden="false">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">Bienvenue dans ce jeu de plateau !</h5>
+              </div>
+              <div class="modal-body">
+                Pour commencer la partie, veuillez cliquer n'importe où dans la fenêtre de votre navigateur. Merci.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- End modal -->
+        <div class="modal fade" id="modal1" tabindex="100" role="dialog" aria-labelledby="modalLabel" aria-hidden="false">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title ml-auto mr-auto" id="modalLabel">Fin du jeu</h5>
+              </div>
+              <div class="modal-body">
+                <h5 class="text-center" id="modal-body-dynamic"></h5>
+                <!-- dynamically implemented -->
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary mr-auto ml-auto" data-dismiss="modal">Nouveau jeu</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Display Player 1-->
+        <div class="row d-flex justify-content-center">
+          <div class="player text-center col-md-3" id="player1">
+            <br />
+            <h2 id="namePlayer1">Joueur 1</h2>
+            <img src="/ressources/player1.jpg" width="50px" height="50px" />
+            <h3 id="healthPlayer1">Santé: 100%</h3>
+            <div class="progress">
+              <div
+                class="progress-bar bg-success progress-bar-striped progress-bar-animated"
+                style="width:100%"
+                id="progress-player1"
+              ></div>
+            </div>
+            <div id="damagePlayer1"></div>
+            <h3 id="nameWeaponPlayer1">Couteau</h3>
+            <img id="imageWeaponPlayer1" src="ressources/couteau.jpg" />
+            <h3 id="damageWeaponPlayer1">Dégats: 10 pts</h3>
+            <div class="row" id="buttons-player1">
+              <button class="btn btn-success col-4 offset-1" id="attack-player1" hidden>Attaquer</button>
+              <button class="btn btn-success col-4 offset-2" id="defend-player1" hidden>Défendre</button>
+            </div>
+          </div>
+  
+          <!-- Display grid -->
+          <div class="col-md-6 d-flex justify-content-center" id="map">
+            <table>
+              <tbody></tbody>
+            </table>
+          </div>
+  
+          <!-- Display Player 2-->
+          <div class="player text-center col-md-3" id="player2">
+            <br />
+            <h2 id="namePlayer2">Joueur 2</h2>
+            <img src="/ressources/player2.jpg" width="50px" height="50px" />
+            <h3 id="healthPlayer2">Santé: 100%</h3>
+            <div class="progress">
+              <div
+                class="progress-bar bg-info progress-bar-striped progress-bar-animated"
+                style="width:100%"
+                id="progress-player2"
+              ></div>
+            </div>
+            <div id="damagePlayer2"></div>
+            <h3 id="nameWeaponPlayer2">Couteau</h3>
+            <img id="imageWeaponPlayer2" src="ressources/couteau.jpg" />
+            <h3 id="damageWeaponPlayer2">Dégats: 10 pts</h3>
+            <div class="row" id="buttons-player2">
+              <button class="btn btn-info col-4 offset-1" id="attack-player2" hidden>Attaquer</button>
+              <button class="btn btn-info col-4 offset-2" id="defend-player2" hidden>Défendre</button>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <br />
+    </div>
+
+    <!-- Section du pied de page-->
+    <div
+      class="container-fluid bg-dark text-center"
+      style="color: white;"
+      id="pieddepage"
+    >
+      <footer class="row">
+        <!-- Réseaux sociaux -->
+        <div class="col-xs-12 mx-auto">
+          <ul class="socialmedia  list-inline list-unlisted">
+            <li class="list-inline-item">
+              <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#"><i class="fab fa-facebook-f fa-2x"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#"><i class="fab fa-google-plus-g fa-2x"></i></a>
+            </li>
+          </ul>
+        </div>
+        <!-- pied de page du footer-->
+        <div class="col-12" style="margin-bottom: 20px;">
+          <p>
+            <a href="#">Mentions légales</a> |
+            <a href="#">Politique de confidentialité</a>
+          </p>
+          <p>MadeInFck | Projet 6 OC | Juin 2019</p>
+        </div>
+      </footer>
+    </div>
+    <script src="./libraries/jquery-3.4.1.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./scripts/utils.js"></script>
+    <script src="./scripts/weapon.js"></script>
+    <script src="./scripts/WeaponFactory.js"></script>
+    <script src="./scripts/player.js"></script>
+    <script src="./scripts/grid.js"></script>
+    <script src="./scripts/app.js"></script>
+  </body>
+</html>
