@@ -1,38 +1,32 @@
-function WeaponFactory() {
-  let instance;
+class WeaponFactory {
+  constructor() {
+      if (!!WeaponFactory.instance) {
+          return WeaponFactory.instance;
+      }
 
-  createWeapon = function(type) {
-    let weapon = new Weapon();
-    weapon.name = type;
+      WeaponFactory.instance = this;
 
-    switch (type) {
-      case "Couteau":
-        weapon.damage = 10;
-        break;
-      case "Sabre":
-        weapon.damage = 15;
-        break;
-      case "Sabre laser":
-        weapon.damage = 20;
-        break;
-      case "Pistolet":
-        weapon.damage = 30;
-        break;
-      case "Mitrailleuse":
-        weapon.damage = 40;
-        break;
-      default:
-        break;
-    }
-    return weapon;
+      return this;
+  }
+
+  buildKnife = () => {
+    return new Weapon("Couteau", 10);
   };
 
-  return {
-    getWeapon: function (type) {
-        if (instance == null) {
-            instance = createWeapon(type);
-        }
-        return instance;
-    }
-};
+  buildSabre = () => {
+    return new Weapon("Sabre", 15);
+  };
+
+  buildLaserSabre = () => {
+    return new Weapon("Sabre laser", 20);
+  };
+
+  buildGun = () => {
+    return new Weapon("Pistolet", 30);
+  };
+
+  buildRifle = () => {
+    return new Weapon("Mitrailleuse", 40);
+  };
+
 }

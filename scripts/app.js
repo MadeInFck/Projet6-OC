@@ -11,12 +11,16 @@
 
   // Get weapons from factory pattern designed as singleton
   let weapons = [];
-  weapons.push(WeaponFactory().getWeapon("Couteau"));
-  weapons.push(WeaponFactory().getWeapon("Sabre"));
-  weapons.push(WeaponFactory().getWeapon("Sabre laser"));
-  weapons.push(WeaponFactory().getWeapon("Pistolet"));
-  weapons.push(WeaponFactory().getWeapon("Mitrailleuse"));
+  const weaponFactory =  new WeaponFactory();
+  console.log(weaponFactory);
 
+  weapons.push(weaponFactory.buildKnife());
+  weapons.push(weaponFactory.buildSabre());
+  weapons.push(weaponFactory.buildLaserSabre());
+  weapons.push(weaponFactory.buildGun());
+  weapons.push(weaponFactory.buildRifle());
+
+  console.log(weapons);
   //Create players
   let namePlayer1 = prompt("Entrez le nom du joueur 1 : ");
   let namePlayer2 = prompt("Entrez le nom du joueur 2 : ");
