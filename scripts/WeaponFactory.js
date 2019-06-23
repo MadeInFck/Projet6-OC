@@ -1,14 +1,4 @@
 class WeaponFactory {
-  constructor() {
-      if (!!WeaponFactory.instance) {
-          return WeaponFactory.instance;
-      }
-
-      WeaponFactory.instance = this;
-
-      return this;
-  }
-
   buildKnife = () => {
     return new Weapon("Couteau", 10);
   };
@@ -28,5 +18,14 @@ class WeaponFactory {
   buildRifle = () => {
     return new Weapon("Mitrailleuse", 40);
   };
+}
 
+const getWeaponFactory = () => {
+  let instance;
+
+  if (!instance) {
+    instance = new WeaponFactory();
+  }
+
+  return instance;
 }
