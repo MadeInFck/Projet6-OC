@@ -11,7 +11,8 @@
 
   // Get weapons from factory pattern designed as singleton
   let weapons = [];
-  const weaponFactory =  new WeaponFactory();
+
+  const weaponFactory = getWeaponFactory();
   console.log(weaponFactory);
 
   weapons.push(weaponFactory.buildKnife());
