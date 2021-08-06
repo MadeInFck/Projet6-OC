@@ -119,7 +119,7 @@ class Grid {
   displayPossibleMoves(number, bool) {
     const positionX = this.players[number - 1].position.x;
     const positionY = this.players[number - 1].position.y;
-
+ 
     // Check left
     for (let i = 1; i <= 3; i++) {
       if (positionX - i < 0) {

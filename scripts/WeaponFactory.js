@@ -7,7 +7,7 @@ class WeaponFactory {
       WeaponFactory.instance = this;
 
       return this;
-  }
+  };
 
   buildKnife = () => {
     return new Weapon("Couteau", 10);
